@@ -1,6 +1,4 @@
-/**
- * Created by chetan on 24/3/16.
- */
+
 
 playerAndScores=[:]
 def getWinner()
