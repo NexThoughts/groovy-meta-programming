@@ -1,28 +1,28 @@
 import java.lang.reflect.Method
 import java.lang.reflect.Modifier
 
-class Demo
-{
+class Demo {
   String name
 }
-Demo demo=new Demo()
 
-demo.metaClass.pay={ println "play"}
+//Adding properties dynamically
+Demo demo = new Demo()
+demo.metaClass.play = "play"
+println "Dynamically added property is " + demo.play
 
 
-demo.pay()
 
+//Adding a static method dynamically
 Integer.metaClass.static.isEven = { number ->
-  println number%2 == 0
+  println number % 2 == 0
 }
-
 Integer.isEven(1) // false
 
 
 
-Demo.metaClass.constructor = {String name -> new Demo(name:"Hi "+name) }
 
+//Adding a constructor dynamically
+Demo.metaClass.constructor = { String name -> new Demo(name: "Hi " + name) }
 Demo demo1 = new Demo('demo')
-
-println demo1.name
+println "Name generated via a modified constructor " + demo1.name
 

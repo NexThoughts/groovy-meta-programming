@@ -1,21 +1,20 @@
-
 class Person {
 
-  def run(int vv)
-  {
-    println 'you r my'+vv
+  def runMe(int number) {
+    println 'run with me ' + number
   }
 
 }
+
 def sam = new Person()
 println 'before'
-sam.metaClass.invokeMethod= { String name, args ->
+sam.metaClass.invokeMethod = { String name, args ->
   println 'before'
 
-
-  def method = Person.metaClass.getMetaMethod('run', 10)
-   method.invoke(delegate,10)
-
+//intercepting the invoke method
+  def method = Person.metaClass.getMetaMethod(name, args)
+  method.invoke(delegate, args)
+  println 'after'
 }
 
-sam.runop(10)
+sam.runMe(10)

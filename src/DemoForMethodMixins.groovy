@@ -14,6 +14,7 @@ class Ninja {
 
 
 Hero.mixin Superman, Ninja
+
 p = new Hero()
 
 p.sleep()

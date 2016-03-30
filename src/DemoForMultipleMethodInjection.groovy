@@ -1,10 +1,7 @@
-/**
- * Created by chetan on 29/3/16.
- */
 Integer.metaClass {
-    isEven { -> delegate%2 == 0 }
-    isOdd { -> delegate%2 != 0 }
-    // other methods
+  isEven { -> delegate % 2 == 0 }
+  isOdd { -> delegate % 2 != 0 }
+  // other methods
 }
 
 println 6.isEven() // true

@@ -1,6 +1,4 @@
-/**
- * Created by chetan on 26/3/16.
- */
+
 class Hello {
 
   def sayHi(String name)
@@ -21,5 +19,5 @@ Hello.metaClass.invokeMethod= { String methodName, args ->
 
 }
 def sam = new Hello()
-sam.sayHi("Cheatn")
+sam.sayHi("chetan")
 sam.anotherMethod()

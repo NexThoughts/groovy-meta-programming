@@ -7,7 +7,7 @@ def getWinner()
   def winner=playerAndScores.max{
     entry-> entry.value
   }
-
+  println playerAndScores
   println "winner is ${winner?.key} with ${winner?.value}"
 
 }
